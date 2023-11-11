@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores'
 	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte'
 	import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte'
 
-	$: currentPage = Number($page.url.searchParams.get('page') || 1)
+	export let page: number = 1
+	export let pathname: string
+
+	$: currentPage = Number(page || 1)
 	$: href = (index: number) => {
-		const pathname = $page.url.pathname
 		switch (index) {
 			case 0: // prev
 				return currentPage === 1 ? '#' : `${pathname}?page=${currentPage - 1}`

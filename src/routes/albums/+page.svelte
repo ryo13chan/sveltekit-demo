@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores'
 	import Meta from '$lib/components/Meta.svelte'
 	import Title from '$lib/components/Title.svelte'
 	import AlbumList from '$lib/components/album/AlbumList.svelte'
@@ -12,4 +13,4 @@
 <div class="mb-8">
 	<AlbumList albums={data.albums} />
 </div>
-<Paginator />
+<Paginator page={Number($page.url.searchParams.get('page'))} pathname={$page.url.pathname} />
