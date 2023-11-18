@@ -7,9 +7,9 @@
 	export let users: User[]
 </script>
 
-<div class="flex flex-col gap-4 p-8 border rounded-xl">
+<ul class="flex flex-col gap-4 p-8 border rounded-xl">
 	{#each users as user}
-		<div class="pb-4 last:pb-0 border-b last:border-b-0 flex justify-between items-center">
+		<li class="pb-4 last:pb-0 border-b last:border-b-0 flex justify-between items-center">
 			<div>
 				<a href={`/users/${user.id}`} class="text-lg font-bold">{user.name}</a>
 				<div class="flex gap-3 mt-2">
@@ -26,6 +26,6 @@
 			<a href={`/users/${user.id}`} class="text-lg">
 				<ChevronRight />
 			</a>
-		</div>
+		</li>
 	{/each}
-</div>
+</ul>
