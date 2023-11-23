@@ -36,9 +36,8 @@ beforeEach(() => {
 
 describe('Users', () => {
 	it('Heading', () => {
-		const h1 = screen.getByRole('heading', { level: 1 })
+		const h1 = screen.getByRole('heading', { level: 1, name: 'Leanne Graham' })
 		expect(h1).toBeTruthy()
-		expect(h1.textContent).toBe('Leanne Graham')
 	})
 	it('UserInfo', () => {
 		const userInfo = screen.getByText('User Info')
