@@ -34,7 +34,7 @@ beforeEach(() => {
 	render(Page, { props: { data: { user, albums } } })
 })
 
-describe('Users', () => {
+describe('User', () => {
 	it('Heading', () => {
 		const h1 = screen.getByRole('heading', { level: 1, name: 'Leanne Graham' })
 		expect(h1).toBeTruthy()
